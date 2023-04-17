@@ -1,5 +1,5 @@
 // Было без комментариев:
-// const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Implement the Stack with a given interface via array.
@@ -32,13 +32,12 @@ class Stack {
 
 
 //тесты на примере
-// tests = new Stack();
+// let tests = new Stack();
 // tests.push(1);
 // tests.push(2);
 // tests.push(3);
 // tests.push(4);
 // console.log(tests)
-
 // console.log(tests.pop());
 // console.log(tests);
 
@@ -46,6 +45,6 @@ class Stack {
 
 
 // Было без комментариев:
-// module.exports = {
-//   Stack
-// };
+module.exports = {
+  Stack
+};

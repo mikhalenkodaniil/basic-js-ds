@@ -1,10 +1,10 @@
 
 //БЫЛО БЕЗ КОММЕНТАРИЕВ:
-// const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require('../extensions/index.js');
 
 
 //БЫЛО БЕЗ КОММЕНТАРИЕВ:
-// const { Node } = require('../extensions/list-tree.js');
+//const { Node } = require('../extensions/list-tree.js');
 
 
 
@@ -17,7 +17,7 @@
 */
 class TreeNode{
     constructor(value){
-        this.value = value;
+        this.data = data;
         this.left = undefined;
         this.right = undefined;
     }
@@ -40,29 +40,27 @@ class TreeNode{
             return this.right.add(value);
         }
         this.right = new TreeNode(value)
-
     }
 }
 
 class BinarySearchTree {
     constructor(){
-        this.root = undefined;
+        this.rootNode = null;
     }
 
   root() {
-    console.log(this.root);
-    return this.root;
+    return this.rootNode;
   }
 
   add(value) {
-    if(this.root){
-        return this.root.add(value);
+    if(this.rootNode){
+        return this.rootNode.add(value);
     }
-    this.root = new TreeNode(value);
+    this.rootNode = new TreeNode(value);
   }
 
   has(value) {
-    let current = this.root;
+    let current = this.rootNode;
     while(true){
         if(current === undefined){ return false;}
         if(current.value == value) {return true;
@@ -77,7 +75,7 @@ class BinarySearchTree {
   }
 
   find(value) {
-    let current = this.root;
+    let current = this.rootNode;
     while(true){
         if(current === undefined){ return null;}
         if(current.value == value) {return current;
@@ -92,7 +90,7 @@ class BinarySearchTree {
   }
 
   remove(value) {
-    let current = this.root;
+    let current = this.rootNode;
     while(true){
         if(current === undefined){ return null;}
         if(current.left.value == value) {
@@ -115,7 +113,7 @@ class BinarySearchTree {
   }
 
   min(){
-    let current = this.root;
+    let current = this.rootNode;
     while(true){
     if (current.left){
         current = current.left;
@@ -124,7 +122,7 @@ class BinarySearchTree {
   }
 
   max() {
-    let current = this.root;
+    let current = this.rootNode;
     while(true){
     if (current.right){
         current = current.right;
@@ -147,6 +145,6 @@ class BinarySearchTree {
 
 
 //БЫЛО БЕЗ КОММЕНТАРИЕВ:
-// module.exports = {
-//   BinarySearchTree
-// };
+module.exports = {
+  BinarySearchTree
+};

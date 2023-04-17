@@ -1,9 +1,9 @@
 // Было без комментариев:
-// const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require('../extensions/index.js');
 
 
 
-// const { ListNode } = require('../extensions/list-node.js');
+const { ListNode } = require('../extensions/list-node.js');
 
 /**
  * Given a singly linked list of integers l and an integer k,
@@ -28,24 +28,28 @@
 
 
 function removeKFromList(l, k) {
+  while(l.value === k) {
+    l = l.next;
+  }
   let tmp = l;
   while(tmp){
     if (tmp.value == k){
       tmp.value = tmp.next.value;
-      delete tmp.next;
+      tmp.next = tmp.next.next;
+      continue;
     }
     tmp=tmp.next;
   }
-  return tmp;
+  return l;
 }
 
 
 
 
 // Было без комментариев:
-// module.exports = {
-//   removeKFromList
-// };
+module.exports = {
+  removeKFromList
+};
 
 
 // проверял на примере:
